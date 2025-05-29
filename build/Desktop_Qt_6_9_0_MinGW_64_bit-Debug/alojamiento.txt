@@ -1,0 +1,3 @@
+ALO001,Casa Laureles,Casa,Cra 45 #12,Medellin,Antioquia,120000,3,wifi;tv;baño privado,123
+ALO002,Depto Centro,Departamento,Calle 10 #20,Medellin,Antioquia,90000,2,wifi;cocina,456
+
