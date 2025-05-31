@@ -18,7 +18,6 @@ float Anfitrion::getPuntuacion() {
     return puntuacion;
 }
 
-
 Anfitrion::Anfitrion(std::string doc, int ant, float punt) {
     documento = doc;
     antiguedad = ant;

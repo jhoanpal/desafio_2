@@ -1,4 +1,4 @@
-// archivo: Anfitrion.h
+
 #ifndef ANFITRION_H
 #define ANFITRION_H
 

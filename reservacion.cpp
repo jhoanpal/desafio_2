@@ -1,4 +1,4 @@
-// Reservacion.cpp
+
 #include "reservacion.h"
 #include <iostream>
 

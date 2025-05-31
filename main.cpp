@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include <string>
 #include "Alojamiento.h"
@@ -7,10 +6,10 @@
 #include "Reservacion.h"
 #include <fstream>
 #include <sstream>
+#include <string>
 
 using namespace std;
 
-// Datos de prueba (provisorios)
 Anfitrion* anfitriones[10];
 int totalAnfitriones = 0;
 
@@ -98,7 +97,6 @@ void cargarAlojamientos() {
         float precio = std::stof(precioStr);
         int numAmen = std::stoi(numAmenStr);
 
-        // Separar amenidades por ';'
         std::istringstream amenStream(amenStr);
         std::string amenidad;
         std::string* amenidades = new std::string[numAmen];
@@ -175,7 +173,7 @@ void cargarHuespedes() {
 
         getline(ss, doc, ',');
         ss >> ant;
-        ss.ignore(1); // Ignorar coma
+        ss.ignore(1);
         ss >> punt;
 
         huespedes[totalHuespedes++] = new Huesped(doc, ant, punt);
@@ -211,7 +209,7 @@ void menuAnfitrion(Anfitrion* a) {
 
         switch (opcion) {
         case 1:
-            a->mostrarReservaciones("2025-01-01", "2025-12-31");
+            cout << mostrarReservaciones();
             break;
         case 2:
             cout << "Funcionalidad en desarrollo...\n";
@@ -240,7 +238,6 @@ void reservarAlojamiento(Huesped* h) {
     cin >> noches;
     cin.ignore();
 
-    // Mostrar alojamientos disponibles en ese municipio (simplificado)
     cout << "\nAlojamientos disponibles en " << municipio << ":\n";
     for (int i = 0; i < totalAlojamientos; ++i) {
         if (alojamientos[i]->getCodigo().substr(0, municipio.size()) == municipio) {
@@ -280,7 +277,6 @@ void reservarAlojamiento(Huesped* h) {
     cout << "Anotaciones para el anfitrión (opcional, max 1000 caracteres): ";
     getline(cin, anotaciones);
 
-    // Crear reserva
     std::string codReserva = generarCodigoReserva(totalReservas);
     Reservacion* nueva = new Reservacion(codReserva, fechaInicio, noches, metodoPago,
                                          fechaInicio, monto, anotaciones, elegido, h);
@@ -374,8 +370,6 @@ void menuHuesped(Huesped* h) {
             }
             break;
         }
-
-
         case 2:
             reservarAlojamiento(h);
             break;
